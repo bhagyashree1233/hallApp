@@ -1,0 +1,39 @@
+#leftSide{
+	width:30%;
+	height:100%;
+}
+#rightSide{
+	width:70%;
+	height:100%;
+}
+#publicNotification{
+	height:8.5vh;
+}
+#notificationImg{
+padding:0;
+top:1.5vh;
+bottom:1.5vh;
+height:10vh;
+}
+#hallImgLayouts{
+height:auto;
+
+
+}
+#composeLayouts{
+margin-top:1vh;
+height:12vh;
+border:1px solid black;		
+}
+.homePageImg{
+height:auto;	
+
+}
+.box1, box2, box3 {
+   height: 300px;
+   border: 2px solid blue;
+   backgorund-color:white;
+}
+.transparent {
+  background: white !important;
+}
