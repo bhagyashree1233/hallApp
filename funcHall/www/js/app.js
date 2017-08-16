@@ -1,12 +1,7 @@
-// Ionic Starter App
+angular.module('starter', ['ionic','ngCordova','starter.controller','starter.services','starter.filter','starter.directive'])
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic','starter.controller'])
-
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+.run(function($ionicPlatform,$cordovaSQLite, $rootScope) {
+  $ionicPlatform.ready(function( ) {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -20,6 +15,17 @@ angular.module('starter', ['ionic','starter.controller'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    if (window.cordova) {
+      $rootScope.db = $cordovaSQLite.openDB({ name: "starter.db", location: 'default' }); //device
+     console.log("Android");
+    }else{
+      $rootScope.db = window.openDatabase("starter.db", '1', 'mail', 1024 * 1024 * 100); // browser
+      console.log("browser");
+    } 
+ //   $cordovaSQLite.execute($rootScope.db, "drop table UserMessages").then( console.log('dropped')) 
+    $cordovaSQLite.execute($rootScope.db, "CREATE TABLE IF NOT EXISTS UserMessages (id integer primary key autoincrement, userId text not null, name text, avatar text, messageText text, dateTimeMessage text, messageType text)").then( console.log('UserMessages table created Successfully'));
+
+  
   });
 })
 .config(function($stateProvider, $urlRouterProvider) {
@@ -38,7 +44,8 @@ angular.module('starter', ['ionic','starter.controller'])
   })
 .state('compose', {
     url: '/compose',
-    templateUrl: 'templates/Compose.html',
+    templateUrl: 'templates/UserMessages.html',
+    controller:'UserMessagesCtrl'
     
   })
  $urlRouterProvider.otherwise('page');
