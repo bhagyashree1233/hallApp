@@ -36,6 +36,10 @@ angular.module('starter', ['ionic','starter.controller'])
     templateUrl: 'templates/Product.html',
     
   })
-
+.state('compose', {
+    url: '/compose',
+    templateUrl: 'templates/Compose.html',
+    
+  })
  $urlRouterProvider.otherwise('page');
 });

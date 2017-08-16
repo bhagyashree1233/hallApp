@@ -6,8 +6,12 @@
       animation: 'slide-in-up'
     }).then(function(modal) { $scope.modal4 = modal; });
     $scope.goBack=function(){
-        
-       $location.path("/page");
+        console.log('HAi')
+       $scope.modal4.hide();
+    }
+
+    $scope.compose=function(){
+       $state.go('compose');
     }
      }])
      

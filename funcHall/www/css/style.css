@@ -3,11 +3,13 @@
 	height:100%;
 }
 #rightSide{
-	width:70%;
+	width:68%;
 	height:100%;
-}
+	}
 #publicNotification{
-	height:8.5vh;
+	margin-top:1vh;
+	height:7vh;
+	background:rgba(0, 0, 0, 0.7);
 }
 #notificationImg{
 padding:0;
@@ -36,4 +38,12 @@ height:auto;
 }
 .transparent {
   background: white !important;
+}
+.modal-backdrop{
+background:white!important;	
+}
+.text-style{
+line-height:4vh;
+font-size:2vh;
+text-align:left;	
 }
