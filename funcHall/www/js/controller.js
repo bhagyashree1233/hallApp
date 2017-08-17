@@ -36,7 +36,7 @@
     $scope.user = {
       _id: 'mallikarjun123',
       pic: '/img/me.jpg',
-      username: 'Mallikarjun'
+      username: 'Sam'
     };
 
     $scope.input = {
@@ -131,6 +131,8 @@
     });*/
 
     $scope.sendMessage = function(sendMessageForm) {
+        console.log(sendMessageForm);
+
       var message = {
         userId: $scope.toUser._id,
         messageText: $scope.input.message,
@@ -139,6 +141,7 @@
         avatar: $scope.toUser.pic,
         messageType: 'sent'
       };
+      console.log(message);
 
       // if you do a web service call this will be needed as well as before the viewScroll calls
       // you can't see the effect of this in the browser it needs to be used on a real device
