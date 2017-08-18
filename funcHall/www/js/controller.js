@@ -1,13 +1,32 @@
  angular.module('starter.controller', [])
      .controller('ProductCtrl', ['$scope','$location','$window' ,'$ionicModal',  '$state','$ionicScrollDelegate', '$ionicSlideBoxDelegate', function($scope,$location,$window, $ionicModal,$state,  $ionicScrollDelegate, $ionicSlideBoxDelegate) {
      console.log('Hai');
+
+     $scope.model1=$ionicModal.fromTemplateUrl('templates/firstImg.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) { $scope.modal1 = modal; });
+    $scope.model2=$ionicModal.fromTemplateUrl('templates/secondImg.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) { 
+    $scope.modal2 = modal;
+    
+     });
+    $scope.model3=$ionicModal.fromTemplateUrl('templates/thirdImg.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) { $scope.modal3 = modal; });
+
      $scope.modal4= $ionicModal.fromTemplateUrl('templates/forthImg.html', {
       scope: $scope,
       animation: 'slide-in-up'
     }).then(function(modal) { $scope.modal4 = modal; });
-    $scope.goBack=function(){
+    $scope.goBack=function(model){
+        console.log(model);
         console.log('HAi')
-       $scope.modal4.hide();
+        //$scope.modal4.hide();
+      $scope[model].hide();
     }
 
     $scope.compose=function(){
