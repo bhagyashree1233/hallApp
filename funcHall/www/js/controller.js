@@ -31,18 +31,6 @@
 })
 
 .controller('listCtrl', function($scope, $location) {
-/*
-  $scope.slideChanged = function(slide) {
-      console.log($scope.slideChanged);
-    $scope.currentSlide = $ionicSlideBoxDelegate.currentIndex();
-
-    if ( $scope.currentSlide == 0) {
-      console.log($scope.currentSlide);
-      $ionicSlideBoxDelegate.enableSlide(false);
-    }
-
-  };*/
-
      $scope.assign = function() {
 
          $location.path('/assign');
@@ -338,13 +326,7 @@
              $scope.hardcodeValues = function(message) {
                  var d = new Date();
                  insertUserMessages(message.userId, message.name, message.avatar, message.messageText, d, message.messageType);
-                 /*       
-                         insertUserMessages('Akarsh123', 'Akarsh', '/img/paint.png', 'Good Morning bro, how r u?', d, 'recieved');
-                         insertUserMessages('darshan123', 'Darshan', '/img/happy.jpg', 'Good Morning, Mallikarjun', d, 'recieved');
-                         insertUserMessages('lingu123', 'Lingraj', '/img/tiger.jpg', 'Good Morning boss, whr r u?', d, 'recieved');
-                         insertUserMessages('akshay123', 'Akshay', '/img/plain.jpg', 'Hello bro, Good Morning', d, 'recieved');
-                         insertUserMessages('imAkarsh', 'Akarsh', '/img/photography1.jpg', 'Good Morning, Enjoy Coding', d, 'recieved');
-                 */
+             
              }
 
              function insertUserMessages(userId, name, avatar, messageText, dateTimeMessage, messageType) {

@@ -216,13 +216,11 @@ span {
   text-align: left !important;
   max-width: 240px !important;
 }
-#leftSide{
-	width:30%;
-	height:100%;
-}
+
 #rightSide{
-	width:68%;
+	width:100%;
 	height:100%;
+	
 	}
 #publicNotification{
 	margin-top:1vh;
