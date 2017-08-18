@@ -24,10 +24,25 @@ angular.module('starter', ['ionic','ngCordova','starter.controller','starter.ser
 })
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-  .state('Test1', {
-    url: '/Test',
-    templateUrl: 'templates/Test.html',
-    
+  .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html'
+  })
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html'
+  })
+  .state('assign', {
+    url: '/assign',
+    templateUrl: 'templates/assign.html'
+  })
+  .state('chat', {
+    url: '/chat',
+    templateUrl: 'templates/chat.html'
+  })
+  .state('list', {
+    url: '/list',
+    templateUrl: 'templates/list.html'
   })
     .state('page', {
     url: '/page',
@@ -39,5 +54,6 @@ angular.module('starter', ['ionic','ngCordova','starter.controller','starter.ser
     templateUrl: 'templates/UserMessages.html',
     controller:'UserMessagesCtrl'
       })
- $urlRouterProvider.otherwise('page');
+     
+ $urlRouterProvider.otherwise('home');
 });
